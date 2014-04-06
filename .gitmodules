@@ -1,0 +1,24 @@
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "modules/apt"]
+	path = modules/apt
+	url = https://github.com/puppetlabs/puppetlabs-apt.git
+[submodule "modules/varnish"]
+	path = modules/varnish
+	url = https://github.com/maxchk/puppet-varnish.git
+[submodule "modules/wget"]
+	path = modules/wget
+	url = https://github.com/maestrodev/puppet-wget.git
+[submodule "modules/nodejs"]
+	path = modules/nodejs
+	url = https://github.com/willdurand/puppet-nodejs.git
+[submodule "modules/git"]
+	path = modules/git
+	url = https://github.com/puppetlabs/puppetlabs-git.git
+[submodule "modules/apache"]
+	path = modules/apache
+	url = https://github.com/example42/puppet-apache.git
+[submodule "modules/puppi"]
+	path = modules/puppi
+	url = https://github.com/example42/puppi.git
