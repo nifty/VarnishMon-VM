@@ -17,6 +17,7 @@ class { 'varnish':
 
 class { 'whisper': }
 class { 'carbon': }
+class { 'graphite': }
 
 exec { 'install_statsd':
     command => 'git clone https://github.com/etsy/statsd.git',
