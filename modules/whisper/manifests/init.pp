@@ -6,6 +6,7 @@ class whisper {
     exec { "download-whisper":
         command => "wget -O $whisper_loc $whisper_url",
         creates => "$whisper_loc",
+        unless => 'test -d /opt/graphite/storage/whisper'
     }
 
     exec { "unpack-whisper":
@@ -18,6 +19,7 @@ class whisper {
     exec { "install-whisper":
         command => "python setup.py install",
         cwd => "$build_dir/whisper-0.9.10",
-        require => Exec[unpack-whisper],
+        subscribe => Exec[unpack-whisper],
+        refreshonly => true,
     }
 }
