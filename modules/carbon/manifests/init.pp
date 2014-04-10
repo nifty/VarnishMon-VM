@@ -16,6 +16,7 @@ class carbon {
     exec { "download-carbon":
         command => "wget -O $carbon_loc $carbon_url",
         creates => "$carbon_loc",
+        unless => 'test -f /opt/graphite/bin/carbon-cache.py'
     }
 
     exec { "unpack-carbon":
@@ -28,7 +29,7 @@ class carbon {
     exec { "install-carbon":
         command => "python setup.py install",
         cwd => "$build_dir/carbon-0.9.10",
-        require => Exec[unpack-carbon],
+        subscribe => Exec[unpack-carbon],
         creates => "/opt/graphite/bin/carbon-cache.py",
     }
 
