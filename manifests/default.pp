@@ -18,11 +18,5 @@ class { 'varnish':
 class { 'whisper': }
 class { 'carbon': }
 class { 'graphite': }
+class { 'statsd': }
 
-exec { 'install_statsd':
-    command => 'git clone https://github.com/etsy/statsd.git',
-    cwd => '/usr/share',
-    creates => '/usr/share/statsd',
-    path => ['/usr/bin'],
-    require => Package[git]
-}
